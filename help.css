@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 30px;
+  font: normal 14px/1.6em "Source Sans Pro", sans-serif;
+  color: #222;
+  max-width: 600px;
+  margin: auto;
+}
+
+:target {
+  background-color: #fe0;
+}
+
+a:link,
+a:visited {
+  color: slateblue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font: normal 1.6em/1.6em "Source Sans Pro", sans-serif;
+  margin: 2em 0 1em 0; 
+}
+
+h2 {
+  font: normal 1.3em/1.6em "Source Sans Pro", sans-serif;
+  margin: 1em 0;
+}
+
+table {
+  border-spacing: 0;
+  border: none;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+td {
+  padding: 4px;
+}

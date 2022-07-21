@@ -1,0 +1,183 @@
+@keyframes showContextMenu {
+  from { opacity: 0}
+}
+
+.menu {
+  margin: 0;
+  box-sizing: border-box;
+/*   animation: showContextMenu .1s ease-in; */
+  z-index: 32000;
+  display: none;
+  max-height: 100%;
+  overflow:auto;
+  border: solid 1px #c0c0c0;
+  border-radius: 0px;
+  background-color: #fff;
+/*   box-shadow: inset 0 0 2px #fff; */
+  padding: 4px 0;
+}
+
+
+.menuitem {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0 0;
+}
+
+.menuitem.active > .menu {
+  display: block;
+}
+
+.menuitem-text {
+  width: 100%;
+  margin-right: 28px;
+}
+
+.menuitem-shortcut {
+  opacity: 0.7;
+}
+
+.menuitem button {
+  background: transparent;
+  border: solid 1px transparent;
+  border-radius: 0;
+  color: #444;
+  cursor: default;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font: normal 12px/1em "Source Sans Pro", sans-serif;
+  padding: 9px 32px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menuitem button::-moz-focus-inner {
+  border: none;
+}
+
+.has-menuitems.active > button,
+.menuitem button:hover,
+.menuitem button:focus,
+.menuitem button:active {
+  background: slateblue;
+  color: white;
+  outline: none;
+}
+
+.menuitem button:disabled {
+  color: #888;
+  cursor: default;
+}
+
+.menuitem button:disabled:hover {
+  background: transparent;
+}
+
+.menuitem .default-item {
+ font-weight: bold;
+}
+
+.has-menuitems > button::after {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  display:  flex;
+  height: 100%;
+  align-items: center;
+  content: '\e5cc';
+  font-size: 15px;
+  font-family: "Material Icons";
+}
+
+.menuitem.checkbox.checked button::before {
+  content: '\e5ca';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  font-weight: 400;
+  font-family: material icons;
+  font-size: 16px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  color: inherit;
+  display: block;
+  text-align: center;
+}
+
+.menuitem.radio.checked button::before {
+  content: '\25cf';
+  float: left;
+  margin-top: -0.10em;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+  left: 8px;
+  color: #87b;
+}
+
+
+.menu hr {
+  border: none;
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #fff;
+  margin: 3px 32px;
+  padding: 0;
+}
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menuitem-fonticon {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  display: flex;
+  align-items:center;
+  width: 16px;
+  height: 100%;
+  text-align: center;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+}
+
+.menubar ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: mediumslateblue;
+  color: #fff;
+}
+
+.menubar button {
+  border:none;
+  background: transparent;
+  padding: 4px 6px;
+  font: 400 normal 12px/1.2 "Segoe UI", Arial, Helvetica, sans-serif;
+  color: inherit;
+}
+
+.menubar button:hover,
+.menubar button.active {
+  border: none;
+  background: slateblue;
+  color: white;
+}

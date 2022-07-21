@@ -1,0 +1,82 @@
+.calendar {
+  background: #000c;
+  background: var(--itemBackgroundColor);
+  border-radius: 2px;
+  color: white;
+  color: var(--itemColor);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.calendar-navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 6px 6px 12px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #fff2;
+}
+
+.calendar-month-label,
+.calendar-year-label {
+  font-size: 14px;
+  display: flex;
+  flex-flow: row nowrap;
+  cursor: default;
+}
+.calendar-year-label,
+.calendar-month-label {
+  width: 120px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.calendar-back::before {
+  content: '\276c';
+  
+}
+
+.calendar-forth::before {
+  content: '\276d';
+  
+}
+
+.calendar-back::before,
+.calendar-forth::before {
+  margin: 0 4px;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.calendar-back:hover::before,
+.calendar-forth:hover::before {
+  background-color: #fff2;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+td,th {
+  padding: 6px 14px;
+  cursor: default;
+  text-align: right;
+  border: 0;
+}
+
+td {
+}
+
+td:not([colspan]):hover {
+  background: #fff2;
+}
+
+.highlight {
+  background-color: #fff3;
+}

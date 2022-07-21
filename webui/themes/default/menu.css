@@ -1,0 +1,199 @@
+.menu, .menubar {
+  --text-color: #555;
+  --active-bg-color:#f67;
+  --active-bg-image: none;
+  --active-text-color: #fde;
+  --font-size: 9pt;
+  --font-family: source sans pro, sans serif;
+}
+
+.menu {
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 32000;
+  display: none;
+  max-height: 100%;
+  overflow:auto;
+  background-color: #fff;
+/*   border: solid 1px #ddd; */
+  border-radius: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  padding: 6px 0;
+}
+
+
+.menuitem {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0 0;
+}
+
+.menuitem.active > .menu {
+  display: block;
+}
+
+.menuitem-text {
+  width: 100%;
+  margin-right: 28px;
+}
+
+.menuitem-shortcut {
+  opacity: 0.7;
+}
+
+.menuitem button {
+  background: transparent;
+  border: solid 1px transparent;
+  border-radius: 0;
+  color: var(--text-color);
+  cursor: default;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font: 400 normal 14px/1em sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  padding: 6px 24px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menu hr {
+  border: none;
+  border-top: solid 1px #e8e8e8;
+  margin: 4px 24px;
+  padding: 0;
+}
+
+.menuitem button::-moz-focus-inner {
+  border: none;
+}
+
+.has-menuitems.active > button,
+.menuitem button:hover,
+.menuitem button:focus,
+.menuitem button:active {
+  background-color: var(--active-bg-color);
+  color: var(--active-text-color);
+/*   background-color: gold; */
+/*   color: white; */
+  outline: none;
+}
+
+.menuitem button:disabled {
+  color: #bbb;
+  cursor: default;
+}
+
+.menuitem button:disabled:hover {
+  background: transparent;
+}
+
+.menuitem .default-item {
+ font-weight: bold;
+}
+
+.has-menuitems > button::after {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  content: 'chevron_right';
+  font-size: 15px;
+  font-family: "Material Icons";
+}
+
+.menuitem.checkbox.checked button::before {
+  content: 'check_box';
+  font-family: material icons;
+  font-size: 13px;
+  font-weight: 400;
+  position: absolute;
+  left: 6px;
+  top: 0px;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuitem.radio.checked button::before {
+  content: 'radio_button_checked';
+  font-family: material icons;
+  font-size: 13px;
+  font-weight: 400;
+  position: absolute;
+  left: 6px;
+  top: 0px;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menuitem-fonticon {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  display: flex;
+  align-items:center;
+  width: 16px;
+  height: 100%;
+  text-align: center;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+}
+
+.menubar ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  color: #555;
+  border-bottom: solid 1px #ddd;
+}
+
+.menubar button {
+  border:none;
+  border-bottom: solid 2px transparent;
+  background: transparent;
+  padding: 5px 6px;
+  font: 400 normal 13px/1 sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: inherit;
+}
+
+.menubar button:hover,
+.menubar button.active {
+  border-color: currentColor;
+/*   background: var(--active-bg-color); */
+  color: var(--active-bg-color);
+}

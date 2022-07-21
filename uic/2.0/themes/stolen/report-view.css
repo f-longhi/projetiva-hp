@@ -1,0 +1,124 @@
+.uic-report {
+  box-sizing: border-box;
+  overflow: auto;
+  border: solid 1px #ccc;
+  position: relative;
+  padding-top: 26px;
+  height: 100%;
+  width: 100%;
+}
+
+.uic-report-list {
+  min-height: 100%;
+}
+
+.uic-report-item, .uic-report-header {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1px 0;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  box-sizing: border-box;
+  min-width: 100%;
+  cursor: default;
+}
+
+.uic-report-cell {
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: normal normal 12px/16px "Source Sans Pro";
+  box-sizing: border-box;
+  padding: 1px 5px;
+}
+
+.uic-report-header {
+  position: absolute;
+  top: 0;
+  font-weight: 600;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 0;
+  border-bottom: solid 1px #ccc;
+}
+
+.uic-report-header-cell {
+  padding: 5px 5px 3px 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+.uic-report-header-cell:hover {
+  background: #ddd;
+}
+
+.uic-report-header-cell.ascending::after,
+.uic-report-header-cell.descending::after {
+  content: '';
+  display: block;
+  border: solid 4px transparent;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.uic-report-header-cell.ascending::after {
+  border-bottom-color: #666;
+  border-top-width: 0;
+}
+
+.uic-report-header-cell.descending::after {
+  border-top-color: #666;
+  border-bottom-width: 0;
+}
+
+.uic-report-column-resize {
+  border-right: solid 1px #ccc;
+  top: 20%;
+  height: 60%;
+  position: absolute;
+  right: 0;
+  width: 3px;
+  cursor: e-resize
+}
+
+.uic-resizeguide {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-left: solid 1px black;
+}
+
+.uic-report-group {
+  margin: 2px 0;
+}
+
+.uic-report-group h1 {
+  padding: 8px 5px 5px 5px;
+  margin: 0;
+  font: inherit;
+  font-size: 16px;
+  width: 100%;
+}
+
+.uic-report-item {
+  color: #333;
+}
+
+.uic-report-item.selected,
+.uic-report-item.selected:hover {
+  background: #08f;
+  color: white;
+}
+
+.uic-report-cell.numberCell {
+  text-align: right;
+}

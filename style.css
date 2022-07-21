@@ -1,0 +1,620 @@
+:root {
+  height: 100%;
+}
+
+body {
+  background-attachment: fixed;
+  background-blend-mode: var(--backgroundBlendMode);
+  background-color: var(--backgroundColor);
+  background-image: var(--backgroundImage);
+  background-position: var(--backgroundPosition);
+  background-size: cover;
+  box-sizing: border-box;
+  font-family: source sans pro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  height: 100%;
+  margin: auto;
+  padding: 60px 30px;
+  min-width: 500px;
+  max-width: 720px;
+  overflow: auto scroll;
+}
+
+a:link,
+a:visited {
+  color: #04e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+    
+}
+
+main {
+/*   max-width: 700px; */
+  min-height: 100%;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+iframe {
+  border: none;
+}
+
+button {
+  outline: none;
+}
+
+#searchForm {
+  position: relative;
+}
+
+#searchField {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  padding: 10px 48px;
+  color: var(--itemColor);
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  border-radius: 2px;
+  border: none;
+  background-color: var(--searchBackgroundColor);
+  display: block;
+  margin:0;
+  outline: none;
+}
+
+#searchField:focus {
+  background-color: var(--itemBackgroundColor);
+}
+
+#searchField::placeholder {
+  color: var(--itemColor);
+  opacity: 1;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.searchIcon::before {
+  content: '\e8b6';
+  color: var(--itemColor);
+  font-family: "Material Icons";
+  font-size: 32px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gButton,
+.gInput {
+  font: normal 14px/1.3em "Source Sans Pro", sans-serif;
+  border-radius: 2px;
+  border: solid 1px #ddd;
+}
+
+.gInput {
+  color: #666;
+  padding: 4px 8px;
+}
+
+
+button.gButton {
+  padding: 6px 16px;
+  font: normal 14px/1.3em "Source Sans Pro", sans-serif;
+  border-radius: 2px;
+  border: solid 1px #ddd;
+  background: #f0f0f0;
+  color: #555;
+  display: inline-block;
+}
+
+button.gButton:hover {
+  background: linear-gradient(#f5f5f5, #f0f0f0);
+  box-shadow: 0 1px 1px #ddd, 0 1px 0 #fff;
+  border-color: #ccc;
+  cursor: pointer;
+}
+
+button.gButton:disabled {
+  color: #999;
+  background: #f8f8f8;
+  border-color: #f0f0f0;
+  box-shadow: none;
+}
+
+
+button.gButton.gDefaultButton {
+  border-color: slateblue;
+  background: slateblue;
+  color: white;
+}
+
+button.gButton.gDefaultButton:hover {
+  background: mediumslateblue;
+  border-color: mediumslateblue;
+  box-shadow: 0 1px 1px #aaa;
+}
+
+button.gButton.fullWidth {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+  text-align: left;
+}
+
+.plusButton::before {
+  font-family: "Material Icons";
+  content: "\e3ba";
+  margin-right: 4px;
+  position: relative;
+  top: 2px;
+}
+
+.gInput[type=number] {
+  width: 80px;
+}
+
+.gInput::placeholder {
+  opacity: 1;
+  color: #888;
+}
+
+.codeInput {
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+.blockInput {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+
+.fullWidth {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.spacer {
+  height: 16px;
+}
+
+
+.actionBox {
+/*   border: solid 1px #ddd; */
+  background: #fff;
+  box-shadow: 0 1px 2px #ccc;
+  padding: 6px 20px;
+  border-radius: 2px;
+  margin: 6px 0;
+  color: #444;
+  cursor: pointer;
+}
+
+.actionBox:hover {
+  box-shadow: 0 1px 2px #aaa;
+}
+
+.actionBox h2 {
+  margin: 10px 0;
+  padding: 0;
+  font-size: 14px;
+  color: #222;
+}
+
+.actionBox h2::after {
+  content: '\e409';
+  font-family: "Material Icons";
+  font-size: 20px;
+  position: relative;
+  top: 1px;
+  color: #444;
+  float: right;
+  position: relative;
+}
+
+.actionBox p {
+  padding: 0;
+  margin: 10px 0;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+
+
+#fastAccess {
+  margin-top: 10px;
+}
+
+#fastAccess ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width:  100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#fastAccess li {
+  margin: 0 6px 6px 0;
+  padding: 0;
+}
+
+
+#fastAccess a:link,
+#fastAccess a:visited {
+  padding: 2px 6px 2px 6px;
+  color: var(--itemColor);
+  font-family: "Ubuntu", "Open Sans", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  display: block;
+}
+
+#fastAccess a:hover,
+#fastAccess a:focus {
+  background: var(--itemBackgroundColor);
+  outline: none;
+}
+
+#fastAccess a::before {
+  font-family: "Material Icons";
+  margin-right: 6px;
+  top: 2px;
+  position: relative;
+  font-size: 1em;
+  content: '\e80b'
+}
+
+#fastAccess .linkToNote a::before {
+  content: '\e90f';
+}
+
+#fastAccess .addLink {
+  font-family: "Material Icons";
+}
+
+#fastAccess .addLink a:before {
+  content: '\e147';
+  margin-right:0;
+}
+
+
+
+
+
+
+#projectListContainer {
+  clear: both;
+  padding-top: 30px;
+}
+
+#projectList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--itemColor);
+  font-family: "Open Sans", sans-serif;
+  overflow: auto;
+}
+
+.project {
+  width: 100%;
+  margin-bottom: 50px;
+  cursor:pointer;
+}
+
+.projectTitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 20px 0;
+}
+
+.projectStatus {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.projectProgress {
+  float: right;
+}
+
+
+.progressBar {
+  position: relative;
+  height: 2px;
+}
+
+.progressBarTrack {
+  background: var(--itemColor);
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.progressBarThumb {
+  height: 100%;
+  background: var(--itemColor);
+  opacity: 0.7;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+
+
+.panel {
+  position: fixed;
+  height: 100%;
+  width: 400px;
+  top:0;
+  left: 0;
+  box-shadow: 0 0 10px #aaa;
+  padding: 60px 40px 40px 40px;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  overflow: auto;
+  z-index: 100;
+}
+
+.panel hr {
+  border: none;
+  border-top: solid 1px #ccc;
+  margin: 30px 0;
+}
+
+
+h2 {
+  font: 400 22px/1.3em "Open Sans";
+  margin: 30px 0;
+}
+
+
+
+.itemList {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+  font: normal 400 14px/1.4em "Open Sans";
+}
+
+.itemList li {
+  display: block;
+  padding: 3px 6px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.itemList li:hover {
+  background: #eee;
+}
+
+.itemList li span:first-child {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding-right: 28px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.itemList .remove {
+  cursor: pointer;
+  padding: 3px 6px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.itemList .remove::before {
+  font-family: "Material Icons";
+  content: '\e14c';
+  padding: 0px;
+  display: block;
+}
+
+.itemList .remove:hover {
+  background: #c00;
+  color: #fff;
+}
+
+.itemList li :first-child::before {
+  font-family: "Material Icons";
+  position: relative;
+  top: 2px;
+  margin-right: 8px;
+  color: #555;
+}
+
+#fastAccessEditList li :first-child::before {
+  content: '\e157';
+}
+
+#fastAccessEditList li.note :first-child::before {
+  content: '\e90f';
+}
+
+#projectsEditList li :first-child::before {
+  content: '\e226';
+}
+
+.hidden {
+  display: none;
+}
+
+.note {
+  color: #444;
+  font-size: 15px;
+}
+
+.note img {
+  max-width: 100%;
+}
+
+.note h1 {
+  font-size: 1.4em;
+  font-weight: normal;
+}
+
+.note h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.note ul {
+  padding: 0 0 0 30px;
+}
+
+.page {
+  background: white;
+  color: #444;
+  padding: 35px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.page h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  color: #666;
+  font-weight: 400;
+}
+
+.titleInput {
+  font: 400 normal 18px "Source Sans Pro", sans serif;
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px #ccc;
+  color: #555;
+  margin-bottom: 24px;
+  padding: 8px 0;
+}
+
+.buttonBar {
+  margin: 30px 0 0 0;
+  text-align: right;
+}
+
+.buttonBar > * {
+  margin-left: 6px;
+}
+
+.taskListWrapper {
+  margin: 30px 0;
+}
+
+.checklist {
+  margin: 20px 0;
+}
+
+
+.taskState_done .checkitem-text {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.checklist .taskActions button {
+  border: none;
+  padding: 3px 6px;
+  background: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checklist .taskActions button:hover {
+  color: #f8f8f8;
+  background-color: crimson;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 850px) {
+
+}
+
+@media screen and (max-width: 650px) {
+
+}
+
+.toolbar {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  align-items: safe;
+  /*! align-content: center; */
+}
+
+.toolbar-item {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  color: rgba(0, 0, 0, .51);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar-item:hover {
+  color: rgba(0, 0, 0, .7)
+}
+
+
+.toolbar-item-icon {
+  font-family: "Material Icons";
+}
+
+.floating-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-panel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.floating-panel-content {
+  position: absolute;
+}

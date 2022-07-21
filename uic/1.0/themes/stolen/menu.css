@@ -1,0 +1,193 @@
+@keyframes showContextMenu {
+  from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+.menu {
+  margin: 0;
+  padding: 2px;
+  box-sizing: border-box;
+  animation: showContextMenu .2s linear;
+  z-index: 32000;
+  display: none;
+  max-height: 100%;
+  overflow:auto;
+  background: #eee linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px #0003;
+}
+
+
+.menuitem {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.menuitem.active > .menu {
+  display: block;
+}
+
+.menuitem button {
+  background: transparent;
+  border: solid 1px transparent;
+  border-radius: 3px;
+  color: #444;
+  cursor: default;
+  display: flex;
+  flex-flow:row nowrap;
+  justify-content: space-between;
+  font: normal 13px/1em Roboto, Segoe UI, sans-serif;
+  padding: 6px 22px 6px 32px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menuitem button::-moz-focus-inner {
+  border: none;
+}
+
+.has-menuitems.active > button,
+.menuitem button:hover,
+.menuitem button:focus,
+.menuitem button:active {
+  background: linear-gradient(#5d6d79, #2e3940);
+  border-color: #2e3940;
+  outline: none;
+  color: #fff;
+}
+
+.menuitem button:disabled {
+  color: #888;
+  cursor: default;
+}
+
+.menuitem button:disabled:hover {
+  background: none;
+  border-color: transparent;
+}
+
+.menuitem .default-item {
+ font-weight: bold;
+}
+
+.has-menuitems > button::after {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  display:  block;
+  content: '\f0da';
+  font-size: 12px;
+  font-family: fontawesome;
+  color: inherit;
+}
+
+.menuitem-shortcut {
+  opacity: 0.7;
+  margin-left: 20px;
+}
+
+.menuitem.checkbox.checked button::before {
+  content: '\e5ca';
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  font-weight: 400;
+  font-family: material icons;
+  font-size: 16px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  color: inherit;
+  display: block;
+  text-align: center;
+}
+
+.menuitem.radio.checked button::before {
+  content: '\25cf';
+  float: left;
+  margin-top: -0.10em;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+  left: 8px;
+  color: #87b;
+}
+
+
+.menu hr {
+  border: none;
+  border-top: solid 1px #aaa;
+  border-bottom: solid 1px #fff;
+  margin: 7px 5px 7px 5px;
+  padding: 0;
+}
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu-fa-icon {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  line-height: 18px;
+  text-align: center;
+  font-family: fontawesome;
+  font-size: 15px;
+  color: #333;
+}
+
+.menuitem-fonticon {
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+  color: inherit;
+}
+
+.menubar ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ddd;
+  color: #000;
+}
+
+.menubar button {
+  border:none;
+  background: transparent;
+  padding: 4px 6px;
+  font: 400 normal 12px/1.2 "Segoe UI", Arial, Helvetica, sans-serif;
+  color: inherit;
+}
+
+.menubar button:hover,
+.menubar button.active {
+  border: none;
+  background: #09d;
+  color: white;
+}

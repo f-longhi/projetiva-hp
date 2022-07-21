@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./checklist.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./calendar.css">
+    <link rel="stylesheet" href="./webui/themes/material/menu.css">
+    <link rel="stylesheet" href="./uic/1.0/themes/slateblue/dialogs.css">
+  </head>
+
+  <body>
+
+    <main></main>
+
+    <script>
+      for (let src of [
+        "./locale/pt-BR.js",
+        "./lib/jquery.min.js",
+        "./lib/jquery-ui.min.js",
+        "./lib/files4.js",
+        "./lib/showdown.min.js",
+        "./webui/menu.js",
+        "./uic/1.0/dialogs.js",
+        "./searchProcessors.js",
+        "./checklist.js",
+        "./calendar.js",
+        "./floating-panels.js",
+        "./app.js"
+      ]) {
+        let script = document.body.appendChild(document.createElement('script'));
+        script.async = false;
+        script.src = src;
+      }
+    </script>
+
+  </body>
+
+</html>
